@@ -13,6 +13,16 @@
 	/*background-color: #444;*/
 }
 
+
+.control-panel {
+	position: fixed;
+	bottom: 0;
+}
+.control-btn {
+	width: 40px;
+	height: 40px;
+}
+
 #car:before {
 	content: '';
 	position: absolute;

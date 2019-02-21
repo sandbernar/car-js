@@ -17,6 +17,31 @@ document.addEventListener('keypress',function(event) {
 	listenKeyboard(key)
 })
 
+
+function mcForward() {
+	if (mainCar.engineRunning)
+		mainCar.speed += 2;
+}
+function mcLeft() {
+	mainCar.wheel = -1;
+}
+function mcBack() {
+	if (mainCar.engineRunning)
+		mainCar.speed -= 1;
+
+}
+function mcRight() {
+	mainCar.wheel = 1;
+}
+function mcEngine() {
+	if (mainCar.engineRunning) {
+		mainCar.engineRunning = false
+		mainCar.speed = 0
+	} else {
+		mainCar.engineRunning = true
+	}
+}
+
 function listenKeyboard(key) {
 	// w
 	if (mainCar.engineRunning) {
@@ -26,13 +51,12 @@ function listenKeyboard(key) {
 		} else if(key == 115) {
 			mainCar.speed -= 1;
 			console.log('decelerating')
-		} else if(key == 97) {
-			mainCar.wheel = -1;
-			console.log('decelerating')
-		} else if(key == 100) {
-			mainCar.wheel = +1;
-			console.log('decelerating')
-		}
+	}
+
+	} if(key == 97) {
+		mainCar.wheel = -1;
+	} else if(key == 100) {
+		mainCar.wheel = +1;
 	}
 
 	if (key == 101) {
