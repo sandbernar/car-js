@@ -19,7 +19,7 @@
 	top: 0;
 	right: 0;
 	bottom: 0;
-	background-image: url(img/car.png);
+	background-image: url(../img/car.png);
 	-webkit-background-size: contain;
 	background-size: contain;
 	background-position: center center;
