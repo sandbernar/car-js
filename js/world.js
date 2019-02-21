@@ -19,24 +19,28 @@ document.addEventListener('keypress',function(event) {
 
 function listenKeyboard(key) {
 	// w
-	if (key == 119) {
-		mainCar.speed += 2;
-		console.log('accelerating')
-	} else if(key == 115) {
-		mainCar.speed -= 1;
-		console.log('decelerating')
-	} else if(key == 97) {
-		mainCar.wheel = -1;
-		console.log('decelerating')
-	} else if(key == 100) {
-		mainCar.wheel = +1;
-		console.log('decelerating')
+	if (mainCar.engineRunning) {
+		if (key == 119) {
+			mainCar.speed += 2;
+			console.log('accelerating')
+		} else if(key == 115) {
+			mainCar.speed -= 1;
+			console.log('decelerating')
+		} else if(key == 97) {
+			mainCar.wheel = -1;
+			console.log('decelerating')
+		} else if(key == 100) {
+			mainCar.wheel = +1;
+			console.log('decelerating')
+		}
 	}
 
 	if (key == 101) {
 		if (mainCar.engineRunning) {
 
 			mainCar.engineRunning = false;
+			// stop car immideatly!
+			mainCar.speed = 0
 
 		} else {
 			

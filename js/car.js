@@ -9,6 +9,8 @@ class Car extends Entity {
 		this.wheelDir = 0; // руль смотрит вперед положения -3, 3
 
 		this.engineRunning = false;
+		this.maxSpeed = 15;
+		this.minSpeed = -5;
 	}
 
 	set wheel(dir) {
@@ -29,6 +31,14 @@ class Car extends Entity {
 	}
 
 	refresh() {
+
+		if (this.speed > this.maxSpeed) {
+			this.speed = this.maxSpeed
+		}
+
+		if (this.speed < this.minSpeed) {
+			this.speed = this.minSpeed
+		}
 
 		let spin = this.speed * this.wheelDir * 0.1
 		this.direction += spin
