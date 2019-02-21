@@ -9,7 +9,7 @@ class Car extends Entity {
 		this.wheelDir = 0; // руль смотрит вперед положения -3, 3
 
 		this.engineRunning = false;
-		this.maxSpeed = 10;
+		this.maxSpeed = 15;
 		this.minSpeed = -5;
 	}
 

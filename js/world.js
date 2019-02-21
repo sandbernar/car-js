@@ -33,15 +33,14 @@ function listenKeyboard(key) {
 			mainCar.wheel = +1;
 			console.log('decelerating')
 		}
-	} else {
-		// stop car immideatly!
-		mainCar.speed = 0
 	}
 
 	if (key == 101) {
 		if (mainCar.engineRunning) {
 
 			mainCar.engineRunning = false;
+			// stop car immideatly!
+			mainCar.speed = 0
 
 		} else {
 			
