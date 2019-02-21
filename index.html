@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Car game</title>
-	<link rel="stylesheet" href="css/world.css">
+	<link rel="stylesheet" href="css/world.css?v=2">
 </head>
 <body>
 	<!-- <canvas id="canvas" width="500" height="500"></canvas> -->
@@ -11,11 +11,17 @@
 	<div class="scene">
 		<div id="car"></div>
 	</div>
-	<input type="text">
+	<div class="control-panel">
+		<button class="control-btn" onclick="mcForward()">W</button>
+		<button class="control-btn" onclick="mcLeft()">A</button>
+		<button class="control-btn" onclick="mcBack()">S</button>
+		<button class="control-btn" onclick="mcRight()">D</button>
+		<button class="control-btn" onclick="mcEngine()">E</button>
+	</div>
 
 	<script src="js/physix.js"></script>
 	<script src="js/entity.js"></script>
 	<script src="js/car.js"></script>
-	<script src="js/world.js"></script>
+	<script src="js/world.js?v=2"></script>
 </body>
 </html>
