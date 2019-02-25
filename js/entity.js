@@ -12,6 +12,7 @@ class Entity {
 		this.coordY 	= coordY;
 
 		this.direction 	= direction;
+		this.normalizedDirection 	= direction;
 		this.speed = 0;
 		this.vector = {
 			x: 100,
@@ -23,20 +24,29 @@ class Entity {
 	// calculate movements of the entity
 	refresh() {
 
+		this.normalizedDirection = this.direction
+
+
 		// cut direction - it must be between 0 and 359
 		if (this.direction < 0) {
-			this.direction += 360;
-		}
+			let circles = Math.ceil(Math.abs(this.direction / 360));
+			let degrees = this.direction + (360 * circles);
 
-		if (this.direction > 359) {
-			this.direction -= 360
+			this.normalizedDirection = degrees
+
+		} else if (this.direction > 359) {
+			let circles = Math.ceil(Math.abs(this.direction / 360));
+			let degrees = this.direction - (360 * (circles-1));
+
+			this.normalizedDirection = degrees
+
 		}
 
 
 		// find vector
 		// based on speed, direction and current location we update it's location
 		// by linear function f(y) = a * | x - 180 | - 100
-		this.vector = Physix.prototype.calculateVector(this.direction)
+		this.vector = Physix.prototype.calculateVector(this.normalizedDirection)
 
 
 		// calculate movement
