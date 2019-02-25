@@ -85,9 +85,6 @@ function redraw() {
 	+ 'transform: rotate(' + mainCar.direction + 'deg)'
 	;
 
-
-	// console.log(style);
-
 	carMask.style = style;
 
 	if (mainCar.engineRunning) {
@@ -96,28 +93,6 @@ function redraw() {
 		carMask.className = '';
 	}
 
-	// ctx.clearRect(0, 0, canvas.width, canvas.height);
-	// ctx.save();
-	// ctx.translate(mainCar.coordX, mainCar.coordY);
-
-	// ctx.fillRect(0, 0, mainCar.width, mainCar.height);
-	// ctx.restore();
-
-	// if (dir != mainCar.direction) {
-
-	// 	dir = mainCar.direction
-	// 	ctx.rotate(-mainCar.direction)
-
-	// }
-
-
-	// ctx.moveTo(mainCar.coordX, mainCar.coordY);
-	// ctx.lineTo(mainCar.coordX + mainCar.width, mainCar.coordY);
-	// ctx.lineTo(mainCar.coordX + mainCar.width, mainCar.coordY + mainCar.height);
-	// ctx.lineTo(mainCar.coordX , mainCar.coordY + mainCar.height);
-	// ctx.lineTo(mainCar.coordX , mainCar.coordY);
-	// ctx.stroke();
-	// console.log('log')
 }
 
-setInterval(redraw, 100);
+setInterval(redraw, 300);

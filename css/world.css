@@ -9,7 +9,10 @@
 	position: absolute;
 	width: 75px;
 	height: 50px;
-	transition: all .3s ease;
+	transition: 
+		top .3s linear, 
+		left .3s linear, 
+		transform .3s linear;
 	/*background-color: #444;*/
 }
 
@@ -19,8 +22,9 @@
 	bottom: 0;
 }
 .control-btn {
-	width: 40px;
-	height: 40px;
+	font-size: 40pt;
+	/*width: 40px;*/
+	/*height: 40px;*/
 }
 
 #car:before {
